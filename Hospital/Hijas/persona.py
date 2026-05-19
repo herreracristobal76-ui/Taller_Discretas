@@ -1,6 +1,6 @@
 class Persona:
 
-    def __init__(self, rut="", edad=int, nombre=""):
+    def __init__(self, rut="", edad=0, nombre=""):
         self.__rut = rut
         self.__edad = edad
         self.__nombre = nombre

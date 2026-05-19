@@ -2,7 +2,7 @@ from Hospital.Hijas.persona import Persona
 
 class Paciente(Persona):
 
-    def __init__(self, rut="", edad=int, nombre="", direccion="", telefono=""):
+    def __init__(self, rut="", edad=0, nombre="", direccion="", telefono=""):
         super().__init__(rut, edad, nombre)
         self.__direccion = direccion
         self.__telefono = telefono

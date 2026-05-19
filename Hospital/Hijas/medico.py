@@ -2,13 +2,13 @@ from Hospital.Hijas.persona import Persona
 
 class Medico(Persona):
 
-    def __init__(self, rut="", edad=int, nombre="", especialidad=""):
+    def __init__(self, rut="", edad=0, nombre="", especialidad=""):
         super().__init__(rut, edad, nombre)
         self.__especialidad = especialidad
         self.__ListadoPaciente = []
 
     def __str__(self):
-        return f"Médico: {self.getnombre()}\nRut: {self.getrut}\nEspecialidad: {self.__especialidad}"
+        return f"Médico: {self.getnombre()}\nRut: {self.getrut()}\nEspecialidad: {self.__especialidad}"
 
     def getespecialidad(self):
         return self.__especialidad
