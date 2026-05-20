@@ -15,7 +15,7 @@ if __name__ == "__main__":
     m1 = Medico(rut="12847593-4", edad=47, nombre="Valentina Obreque",  especialidad="Cirujano")
     m2 = Medico(rut="9374821-6",  edad=35, nombre="Rodrigo Inzunza",    especialidad="Cirujano")
     m3 = Medico(rut="15283947-2", edad=54, nombre="Francisca Navarrete",especialidad="Traumatólogo")
-    m4 = Medico(rut="8conductors-K", edad=42, nombre="Sebastián Llanos",   especialidad="Pediatra")
+    m4 = Medico(rut="8192736-K", edad=42, nombre="Sebastián Llanos",   especialidad="Pediatra")
 
     p1 = Paciente(rut="17364829-1", edad=34, nombre="Ignacio Rebolledo",  direccion="Pasaje Los Aromos 45",   telefono="912847365")
     p2 = Paciente(rut="16254738-0", edad=27, nombre="Camila Zuñiga",      direccion="Villa Cordillera 210",   telefono="923748291")
