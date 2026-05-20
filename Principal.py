@@ -1,3 +1,5 @@
+#Martin Fuentes y Cristóbal Herrera
+
 from Hospital.hospital import Hospital
 from Hospital.Hijas.medico import Medico
 from Hospital.Hijas.paciente import Paciente
@@ -127,30 +129,30 @@ if __name__ == "__main__":
 
         elif opcion == "8":
             print("\n---Buscar por Médico---")
-            rut = input("  Ingrese el RUT del médico: ").strip()
+            rut = input("Ingrese el RUT del médico: ").strip()
             hospital.buscarMedico(rut)
 
         elif opcion == "9":
             print("\n---Buscar por Paciente---")
-            rut = input("  Ingrese el RUT del paciente: ").strip()
+            rut = input("Ingrese el RUT del paciente: ").strip()
             hospital.buscarPaciente(rut)
 
         elif opcion == "10":
             print("\n---Asignar Paciente a Médico---")
-            rut_medico   = input("  RUT del médico: ").strip()
-            rut_paciente = input("  RUT del paciente: ").strip()
+            rut_medico   = input("RUT del médico: ").strip()
+            rut_paciente = input("RUT del paciente: ").strip()
             hospital.asignarPacienteMedico(rut_medico, rut_paciente)
 
         elif opcion == "11":
             print("\n---Asignar Paciente a Sala--")
 
             try:
-                id_sala = int(input("  ID de la sala: "))
+                id_sala = int(input("ID de la sala: "))
             except ValueError:
                 print("El ID debe ser un número entero.")
                 continue
 
-            rut_paciente = input("  RUT del paciente: ").strip()
+            rut_paciente = input("RUT del paciente: ").strip()
 
             hospital.asignarPacienteSala(id_sala, rut_paciente)
 
