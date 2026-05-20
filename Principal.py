@@ -63,7 +63,7 @@ if __name__ == "__main__":
         print("11. Asignar paciente a sala")
         print("12. Salir")
         print("-------------------------------------------")
-        print("12. Consultas")
+        print("13. Consultas")
         print("-------------------------------------------")
 
         opcion = input("Seleccione una opción: ").strip()
