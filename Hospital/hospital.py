@@ -61,7 +61,7 @@ class Hospital():
         else:
             print("\nSALAS")
             for sala in self.__ListadoSala:
-                print(f"ID:{sala.getid()}\nCamas: {sala.getCantidad_C()}")
+                print(f"ID:{sala.getid()}\nCamas: {sala.getCantidad_C()}\n")
     
     def showPacientes(self):
         if len(self.__ListadoPaciente) == 0:
@@ -69,7 +69,7 @@ class Hospital():
         else:
             print("\nPACIENTES")
             for p in self.__ListadoPaciente:
-                print(f"Nombre:{p.getnombre()}\nRUT:{p.getrut()}\nEdad:{p.getedad()}")
+                print(f"Nombre:{p.getnombre()}\nRUT:{p.getrut()}\nEdad:{p.getedad()}\n")
     
     def showMedicos(self):
         if len(self.__ListadoMedico) == 0:
@@ -77,7 +77,7 @@ class Hospital():
         else:
             print("\nMÉDICOS")
             for m in self.__ListadoMedico:
-                print(f"Nombre:{m.getnombre()}\nRUT:{m.getrut()}\nEspecialidad:{m.getespecialidad()}")
+                print(f"Nombre:{m.getnombre()}\nRUT:{m.getrut()}\nEspecialidad:{m.getespecialidad()}\n")
     
     def buscarSala(self, id):
         sala_encontrada = None
@@ -100,7 +100,7 @@ class Hospital():
                 print(f"Nombre Paciente:{paciente.getnombre()}\nRUT:{paciente.getrut()}")
                 medico = self.__buscarMedicoDeUnPaciente(paciente.getrut())
                 if medico:
-                    print(f"Médico tratante → Nombre:{medico.getnombre()}\nRUT:{medico.getrut()}")
+                    print(f"Médico asigando:{medico.getnombre()}\nRUT:{medico.getrut()}")
                 else:
                     print("Médico sin asignar")
     
@@ -129,9 +129,9 @@ class Hospital():
         medico = self.__buscarMedicoDeUnPaciente(rut)
 
         if medico:
-            print(f"Médico desigando:{medico.getnombre()}\nRUT:{medico.getrut()}")
+            print(f"Médico asigando:{medico.getnombre()}\nRUT:{medico.getrut()}")
         else:
-            print("Médico no designado")
+            print("Médico no asignado")
 
     def buscarMedico(self, rut):
         medico_encontrado = None
@@ -237,10 +237,13 @@ class Hospital():
     
     def consulta2_comitesMedicos(self):
         total = len(self.__ListadoMedico)
+
         cirujanos = sum(1 for m in self.__ListadoMedico if "cirujano" in m.getespecialidad().lower())
         no_cirujanos = total - cirujanos
+
         total_comites = comb(total, 3)
         sin_cirujano = comb(no_cirujanos, 3)
+
         resultado = total_comites - sin_cirujano
  
         print(f"\nMédicos totales:{total}\nCirujanos:{cirujanos}")
@@ -299,7 +302,7 @@ class Hospital():
         prob = con_medico / total
 
         print(f"\nPacientes con médico:{con_medico}\nTotal:{total}")
-        print(f"Probabilidad: {prob:.4f} ({prob*100:.2f}%)")
+        print(f"Probabilidad de seleccionasr al azar un paciente con médico asignado: {prob:.4f} ({prob*100:.2f}%)")
         return prob
     
     def consulta7_probabilidadSalaDadoMedico(self):
@@ -317,5 +320,5 @@ class Hospital():
         prob = con_medico_y_sala / len(con_medico)
 
         print(f"\nCon médico:{len(con_medico)}\nCon médico Y sala:{con_medico_y_sala}")
-        print(f"P(sala/médico): {prob:.4f} ({prob*100:.2f}%)")
+        print(f"Probabilidad que un paciente tenga sala y médico asignado : {prob:.4f} ({prob*100:.2f}%)")
         return prob

@@ -47,9 +47,9 @@ if __name__ == "__main__":
     print("Datos de ejemplo cargados correctamente.")
 
     while True:
-        print("\n--------------------------------------")
+        print("\n-------------------------------------------")
         print(f"Menú {hospital.getnombre()}")
-        print("--------------------------------------")
+        print("-------------------------------------------")
         print("1.  Crear sala")
         print("2.  Crear médico")
         print("3.  Crear paciente")
@@ -61,22 +61,15 @@ if __name__ == "__main__":
         print("9.  Buscar por paciente")
         print("10. Asignar paciente a médico")
         print("11. Asignar paciente a sala")
-        print("-----------------------------------------")
-        print("Consultas")
-        print("13. ¿Cuántos pacientes tienen asignación?")
-        print("14. ¿Cuántos comités de 3 médicos (mín. 1 cirujano)?")
-        print("15. ¿Cuántas asignaciones (médico, paciente, sala)?")
-        print("16. ¿Cuántas personas visibles (médicos OR pacientes)?")
-        print("17. ¿Mínimo de pacientes por sala?")
-        print("18. Probabilidad: paciente con médico asignado")
-        print("19. Probabilidad: sala dado que tiene médico")
-        print("-------------------------------------------------")
         print("12. Salir")
+        print("-------------------------------------------")
+        print("12. Consultas")
+        print("-------------------------------------------")
 
         opcion = input("Seleccione una opción: ").strip()
 
         if opcion == "1":
-            print("\n── Crear Sala ──")
+            print("\n---Crear Sala---")
             try:
                 id_sala = int(input("ID de la sala: "))
                 camas   = int(input("Cantidad de camas: "))
@@ -85,9 +78,9 @@ if __name__ == "__main__":
                 print("ID y camas deben ser números enteros.")
 
         elif opcion == "2":
-            print("\n── Crear Médico ──")
-            rut = input("  RUT: ").strip()
-            nombre = input("  Nombre: ").strip()
+            print("\n---Crear Médico---")
+            rut = input("RUT: ").strip()
+            nombre = input("Nombre: ").strip()
             try:
                 edad = int(input("Edad: "))
             except ValueError:
@@ -155,31 +148,22 @@ if __name__ == "__main__":
             rut_paciente = input("RUT del paciente: ").strip()
 
             hospital.asignarPacienteSala(id_sala, rut_paciente)
-
+        
         elif opcion == "12":
             print("\nSaliendo del sistema. ¡Hasta luego!\n")
             break
 
         elif opcion == "13":
+            print("\n---Consultas---")
             hospital.consulta1_pacientesConAsignacion()
-
-        elif opcion == "14":
             hospital.consulta2_comitesMedicos()
-
-        elif opcion == "15":
             hospital.consulta3_asignacionesDistintas()
-
-        elif opcion == "16":
             hospital.consulta4_personasVisibles()
-
-        elif opcion == "17":
             hospital.consulta5_minimosPacientesPorSala()
-
-        elif opcion == "18":
             hospital.consulta6_probabilidadPacienteConMedico()
-
-        elif opcion == "19":
             hospital.consulta7_probabilidadSalaDadoMedico()
+
 
         else:
             print("Opción no válida. Intente nuevamente.")
+
