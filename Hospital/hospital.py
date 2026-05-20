@@ -3,7 +3,7 @@ from Hospital.Hijas.paciente import Paciente
 from Hospital.sala import Sala
 from math import comb
  
-class Hospital(Medico, Paciente, Sala):
+class Hospital():
  
     def __init__(self, nombre="", direccion="", telefono=0):
         self.__nombre = nombre
@@ -232,7 +232,7 @@ class Hospital(Medico, Paciente, Sala):
             tiene_sala = self.__buscarSalaDeUnPaciente(p.getrut()) is not None
             if tiene_medico or tiene_sala:
                 count += 1
-        print(f"Pacientes con al menos una asignación:{count}")
+        print(f"\nPacientes con al menos una asignación:{count}")
         return count
     
     def consulta2_comitesMedicos(self):
@@ -243,7 +243,7 @@ class Hospital(Medico, Paciente, Sala):
         sin_cirujano = comb(no_cirujanos, 3)
         resultado = total_comites - sin_cirujano
  
-        print(f"Médicos totales:{total}\nCirujanos:{cirujanos}")
+        print(f"\nMédicos totales:{total}\nCirujanos:{cirujanos}")
 
         print(f"Comités posibles con al menos un cirujano:{resultado}")
         return resultado
@@ -255,7 +255,7 @@ class Hospital(Medico, Paciente, Sala):
 
         resultado = m * p * s
 
-        print(f"Médicos: {m}\nPacientes: {p}\nSalas: {s}")
+        print(f"\nMédicos: {m}\nPacientes: {p}\nSalas: {s}")
 
         print(f"Asignaciones distintas (médico, paciente, sala): {resultado}")
         return resultado
@@ -266,7 +266,7 @@ class Hospital(Medico, Paciente, Sala):
 
         resultado = m + p  
 
-        print(f"Médicos: {m}\nPacientes: {p}")
+        print(f"\nMédicos: {m}\nPacientes: {p}")
 
         print(f"Personas visibles (Médicos o Pacientes): {resultado}")
         return resultado
@@ -299,7 +299,7 @@ class Hospital(Medico, Paciente, Sala):
         prob = con_medico / total
 
         print(f"\nPacientes con médico:{con_medico}\nTotal:{total}")
-        print(f"  Probabilidad: {prob:.4f} ({prob*100:.2f}%)")
+        print(f"Probabilidad: {prob:.4f} ({prob*100:.2f}%)")
         return prob
     
     def consulta7_probabilidadSalaDadoMedico(self):

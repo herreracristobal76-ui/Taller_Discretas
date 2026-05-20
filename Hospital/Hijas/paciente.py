@@ -8,7 +8,7 @@ class Paciente(Persona):
         self.__telefono = telefono
 
     def __str__(self):
-        return f"Paciente:{self.getnombre()}\nEdad:{self.getedad}\nRut:{self.getrut}\nDirección:{self.__direccion}\nTeléfono:{self.__telefono}"
+        return f"Paciente:{self.getnombre()}\nEdad:{self.getedad()}\nRut:{self.getrut()}\nDirección:{self.__direccion}\nTeléfono:{self.__telefono}"
     
     def getdireccion(self):
         return self.__direccion
